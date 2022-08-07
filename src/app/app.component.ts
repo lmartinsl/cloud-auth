@@ -1,4 +1,6 @@
+import { User } from './interfaces/user';
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'cloud-auth';
+
+  public authenticated$: Observable<boolean>
+  public user$: Observable<User>
+
+  public profileMenu
+  public matMenu
+
+  constructor() { }
+
+  public logout(): void { }
+
 }

@@ -1,0 +1,17 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <h3>People</h3>
+</div>
+<div>
+  <button mat-button color="primary" (click)="generate()">Generate</button>
+</div>
+
+<mat-divider></mat-divider>
+
+<mat-selection-list [multiple]="false" *ngIf="people$ | async as people">
+  <mat-list-option *ngFor="let p of people" [value]="p">
+    <div style="display: flex; flex-direction: row; column-gap: 10px">
+      {{ p.name }}, Age: {{ p.age }}, Company: {{ p.company }} -
+      <a href="mailto:{{ p.email }}"> e-mail</a>
+    </div>
+  </mat-list-option>
+</mat-selection-list>

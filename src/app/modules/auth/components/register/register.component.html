@@ -1,0 +1,147 @@
+<div fxLayout="row" fxLayoutAlign="space-around center">
+  <div
+    align="center"
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    class="register-form"
+  >
+    <form role="form" [formGroup]="formRegister" (ngSubmit)="onSubmit()">
+      <mat-card class="mat-elevation-z8" flex="80">
+        <mat-card-title>Sign up</mat-card-title>
+
+        <mat-card-content
+          fxLayout="column"
+          fxLayoutAlign="space-around stretch"
+        >
+          <div fxLayout="row" fxLayoutAlign="space-between stretch">
+            <mat-form-field fxFlex="45">
+              <input
+                matInput
+                type="text"
+                formControlName="firstName"
+                autocomplete="firstName"
+                placeholder="First Name"
+              />
+            </mat-form-field>
+            <mat-form-field fxFlex="45">
+              <input
+                matInput
+                type="text"
+                formControlName="lastName"
+                autocomplete="lastName"
+                placeholder="Last Name"
+              />
+            </mat-form-field>
+          </div>
+
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              formControlName="address"
+              autocomplete="address"
+              placeholder="Address"
+            />
+          </mat-form-field>
+
+          <div fxLayout="row" fxLayoutAlign="space-between stretch">
+            <mat-form-field fxFlex="75">
+              <input
+                matInput
+                type="text"
+                formControlName="city"
+                autocomplete="citt"
+                placeholder="City"
+              />
+            </mat-form-field>
+
+            <mat-form-field fxFlex="15">
+              <mat-select
+                matNativeControl
+                placeholder="State"
+                formControlName="state"
+              >
+                <mat-option *ngFor="let state of states" [value]="state">
+                  {{ state }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="space-between stretch">
+            <mat-form-field fxFlex="45">
+              <input
+                matInput
+                type="text"
+                formControlName="phone"
+                autocomplete="Phone"
+                placeholder="Phone"
+              />
+            </mat-form-field>
+            <mat-form-field fxFlex="45">
+              <input
+                matInput
+                type="text"
+                formControlName="mobilePhone"
+                autocomplete="mobilePhone"
+                placeholder="Mobile Phone"
+              />
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="space-between stretch">
+            <mat-form-field fxFlex="100">
+              <input
+                matInput
+                type="email"
+                formControlName="email"
+                class="form-control"
+                value=""
+                autocomplete="email"
+                placeholder="E-mail"
+              />
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="space-between stretch">
+            <mat-form-field fxFlex="45">
+              <input
+                matInput
+                type="password"
+                formControlName="password1"
+                type="password"
+                autocomplete="off"
+              />
+              <mat-placeholder>
+                <mat-icon>lock</mat-icon> New password
+              </mat-placeholder>
+            </mat-form-field>
+            <mat-form-field fxFlex="45">
+              <input
+                matInput
+                type="password"
+                formControlName="password2"
+                class="form-control"
+                autocomplete="off"
+              />
+              <mat-placeholder>
+                <mat-icon>lock_outline</mat-icon> Password confirmation
+              </mat-placeholder>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="end end">
+            <button
+              mat-button
+              color="primary"
+              type="submit"
+              [disabled]="!formRegister.valid"
+            >
+              <mat-icon>done</mat-icon>&nbsp;Register
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+</div>

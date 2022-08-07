@@ -1,0 +1,56 @@
+<div fxLayout="column">
+  <div fxLayoutAlign="center" fxLayout="row">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-card class="login-card mat-elevation-z8">
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-content fxLayout="column" *ngIf="!loading">
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="email"
+              type="email"
+              placeholder="E-mail"
+              autocomplete="email"
+              readonly="false"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="password"
+              type="password"
+              placeholder="Password"
+              autocomplete="password"
+            />
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <button
+              mat-button
+              color="warn"
+              (click)="loginGoogle()"
+              type="button"
+              [disabled]="loading"
+            >
+              Google Login
+            </button>
+            <button
+              mat-button
+              color="primary"
+              type="submit"
+              [disabled]="!loginForm.valid || loading"
+            >
+              <mat-icon>check</mat-icon>Login
+            </button>
+            <!--button mat-button color="accent" routerLink="/auth/forgot"><mat-icon>lock_open</mat-icon><u> ESQUECI A SENHA</u></button-->
+          </div>
+        </mat-card-actions>
+        <mat-progress-bar
+          *ngIf="loading"
+          mode="indeterminate"
+        ></mat-progress-bar>
+      </mat-card>
+    </form>
+  </div>
+</div>

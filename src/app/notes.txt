@@ -1,0 +1,21 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAzz1plXEQ1CTLd0YR2juBCVyT10vWn7U4",
+  authDomain: "angular-fireauth-c335b.firebaseapp.com",
+  projectId: "angular-fireauth-c335b",
+  storageBucket: "angular-fireauth-c335b.appspot.com",
+  messagingSenderId: "429009666343",
+  appId: "1:429009666343:web:abed950cb2ea816a0fe902"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+AngularFireModule.initializeApp(environment.firebaseConfig),
+AngularFireAuthModule,
+AngularFirestoreModule
