@@ -1,0 +1,35 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+
+  &-form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  &-login-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-title {
+      margin-bottom: 50px;
+    }
+
+    &-inputs {
+      display: flex;
+      flex-direction: row;
+      column-gap: 20px;
+    }
+
+    &-buttons {
+      display: flex;
+      justify-content: flex-end;
+      align-self: flex-end;
+    }
+  }
+}

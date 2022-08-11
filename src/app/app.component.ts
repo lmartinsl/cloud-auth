@@ -1,6 +1,8 @@
-import { User } from './interfaces/user';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { User } from './interfaces/user';
+import { AuthService } from './modules/auth/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +17,16 @@ export class AppComponent {
   public profileMenu
   public matMenu
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {
+    this.user$ = this.authService.getUser()
+    this.authenticated$ = this.authService.authenticated()
+  }
 
-  public logout(): void { }
-
+  public logout(): void {
+    this.authService.logout();
+    this.router.navigateByUrl('/auth/login')
+  }
 }

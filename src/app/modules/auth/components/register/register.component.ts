@@ -30,11 +30,11 @@ export class RegisterComponent implements OnInit {
 
   public onSubmit(): void {
     const {
-      firstName, lastName, address, city, state, phone, mobilePhone, email, password1: password
+      firstName, lastName, address, city, state, phone, mobilePhone, email
     } = this.formRegister.value
 
     const newUser: User = {
-      firstName, lastName, address, city, state, phone, mobilePhone, email, password
+      firstName, lastName, address, city, state, phone, mobilePhone, email
     }
 
     this.authService.register(newUser)
